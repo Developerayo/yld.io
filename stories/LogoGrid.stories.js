@@ -2,6 +2,7 @@ import React from 'react'
 import { storiesOf, addDecorator } from '@storybook/react'
 import Theme from './theme'
 import LogoGrid from '../src/components/Common/LogoGrid'
+import LogoGridReadme from './LogoGrid.md'
 
 addDecorator(Theme)
 
@@ -119,6 +120,11 @@ const unevenNumberOfLogos = [
 ]
 
 storiesOf('LogoGrid', module)
+  .addParameters({
+    readme: {
+      sidebar: LogoGridReadme
+    }
+  })
   .add('single row', () => {
     return <LogoGrid logos={singleRow} />
   })
